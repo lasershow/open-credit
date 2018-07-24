@@ -17,7 +17,7 @@ from .utils import init_logger, read_params, set_seed, create_submission, verify
 set_seed(cfg.RANDOM_SEED)
 logger = init_logger()
 ctx = neptune.Context()
-params = read_params(ctx, fallback_file='../configs/neptune.yaml')
+params = read_params(ctx, fallback_file='configs/neptune.yaml')
 
 
 class PipelineManager:
@@ -401,7 +401,7 @@ def _read_data(dev_mode, read_train=True, read_test=False):
 
     if read_test:
         raw_data['application_test'] = pd.read_csv(params.test_filepath, nrows=nrows)
-    
+
     raw_data['bureau'] = pd.read_csv(params.bureau_filepath, nrows=nrows)
     raw_data['credit_card_balance'] = pd.read_csv(params.credit_card_balance_filepath, nrows=nrows)
     raw_data['pos_cash_balance'] = pd.read_csv(params.POS_CASH_balance_filepath, nrows=nrows)

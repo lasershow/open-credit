@@ -114,3 +114,6 @@ ENV/
 
 # Working directories
 examples/cache/
+
+input/
+experiment/
